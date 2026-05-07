@@ -320,7 +320,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-1 max-w-4xl mx-auto">
             {/* Blyten Block */}
-            <Link to="/blyten" className="group relative aspect-[21/9] rounded-[3rem] overflow-hidden border border-white/10 p-12 flex flex-col justify-end">
+            <a href="https://www.blyten.com" target="_blank" rel="noopener noreferrer" className="group relative aspect-[21/9] rounded-[3rem] overflow-hidden border border-white/10 p-12 flex flex-col justify-end">
               <div className="absolute inset-0 z-0">
                 <img 
                   src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1200" 
@@ -356,7 +356,7 @@ export default function Home() {
                 </div>
                 <span className="text-[10px] uppercase tracking-widest font-bold text-gold group-hover:text-white transition-colors">Deploy Smart Solutions →</span>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
