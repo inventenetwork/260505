@@ -10,19 +10,28 @@ export default function Contact() {
     e.preventDefault();
     setStatus('submitting');
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
     
     // REPLACE THIS URL with your Google Apps Script Web App URL (the one ending in /exec)
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbx6zzAjjWK_KpIGmv3O2iGyBdBNEw656jZKh3cI6p_idHsduXMNKokDkXrdSqSz4f5_/exec"; 
 
     try {
-      await fetch(GOOGLE_SHEET_URL, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // Necessary for Google Script cross-origin
-      });
+      await Promise.all([
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        }),
+        fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        })
+      ]);
       setStatus('success');
-      (e.target as HTMLFormElement).reset(); // Clear the form
+      form.reset();
     } catch (error) {
       console.error(error);
       setStatus('error');
