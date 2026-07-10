@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
-  --font-serif: "Playfair Display", serif;
-  --font-brand: "Helvetica Now Display", "Helvetica Now", "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-serif: "Montserrat", sans-serif;
+  --font-brand: "Montserrat", sans-serif;
   
   --color-gold: #b38b3f;
   --color-cocoa: #3d2b1f;
