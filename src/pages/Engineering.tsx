@@ -141,15 +141,6 @@ export default function Engineering() {
       year: "2023",
       image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
       desc: "Strategic long-haul wireless wide-area infrastructure linking municipal councils and state departmental databases."
-    },
-    {
-      title: "Blyten Smart Agriculture Pilot",
-      client: "Commercial Agrotech",
-      pillarCategory: "iot",
-      tag: "Smart IoT & Telemetry",
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&q=80&w=800",
-      desc: "Automated precision irrigation, environmental sensor matrix, and cloud-connected telemetry dashboard powering smart greenhouse farming."
     }
   ];
 
@@ -193,7 +184,7 @@ export default function Engineering() {
             transition={{ delay: 0.1 }}
             className="text-base sm:text-lg text-paper/70 max-w-3xl leading-relaxed mb-10"
           >
-            Inventé Network provides end-to-end technical capabilities. We consolidate <strong>Mechanical & Electrical (M&E)</strong> engineering, enterprise <strong>ICT infrastructure</strong>, proprietary <strong>Smart IoT (Blyten)</strong>, and bespoke <strong>Software & App Development (Blynd)</strong> under one unified engineering discipline.
+            Inventé Network provides end-to-end technical capabilities. We consolidate <strong>Mechanical & Electrical (M&E)</strong> engineering, enterprise <strong>ICT infrastructure</strong>, proprietary <strong>Smart IoT</strong>, and bespoke <strong>Software & App Development</strong> under one unified engineering discipline.
           </motion.p>
 
           {/* Quick Jump Navigation */}
@@ -201,11 +192,11 @@ export default function Engineering() {
             <a href="#me" className="px-6 py-3 bg-gold text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black transition-all flex items-center gap-2 shadow-lg shadow-gold/20">
               M&E Services <ChevronRight className="w-4 h-4" />
             </a>
-            <a href="#ict" className="px-6 py-3 border border-white/20 text-xs font-bold uppercase tracking-widest rounded-full hover:border-gold hover:text-gold transition-all text-paper/90">
-              ICT Services
-            </a>
             <a href="#iot" className="px-6 py-3 border border-white/20 text-xs font-bold uppercase tracking-widest rounded-full hover:border-gold hover:text-gold transition-all text-paper/90">
               Smart IoT
+            </a>
+            <a href="#ict" className="px-6 py-3 border border-white/20 text-xs font-bold uppercase tracking-widest rounded-full hover:border-gold hover:text-gold transition-all text-paper/90">
+              ICT Services
             </a>
             <a href="#software" className="px-6 py-3 border border-white/20 text-xs font-bold uppercase tracking-widest rounded-full hover:border-gold hover:text-gold transition-all text-paper/90">
               Software Dev
@@ -336,14 +327,149 @@ export default function Engineering() {
         </div>
       </section>
 
-      {/* 4. SUB-SECTION: ICT (INFORMATION & COMMUNICATIONS TECHNOLOGY) */}
+      {/* 4. SUB-SECTION: SMART IOT / ELECTRICAL / CONTROL */}
+      <section id="iot" className="py-24 px-6 bg-[#1f1712] text-paper border-t border-gold/20">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/30 bg-gold/10 text-[10px] font-bold uppercase tracking-widest text-gold mb-4">
+                <Cpu className="w-3.5 h-3.5 text-gold" />
+                Section 02 • Smart IoT & Automation
+              </div>
+              <div className="flex items-center gap-3">
+                <h2 className="text-3xl sm:text-6xl font-black uppercase tracking-tight text-paper leading-none">
+                  Smart IoT & Automation
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-paper/70 max-w-2xl mt-4 leading-relaxed">
+                Inventé Network provides intelligent sensor telemetry, micro-climate controls, and automated facilities across four core suites:
+              </p>
+            </div>
+
+            <Link 
+              to="/contact?pillar=Engineering"
+              className="px-8 py-4 bg-gold text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black transition-all shadow-lg shadow-gold/20 self-start md:self-auto flex items-center gap-2"
+            >
+              Consult IoT Specialist <ExternalLink className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* 4 Smart Automation Suites */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            
+            {/* Smart Farming */}
+            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
+                  <Sprout className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-paper mb-4">Smart Farming</h3>
+                <p className="text-xs text-paper/60 leading-relaxed mb-6">
+                  Precision agriculture: automated irrigation, soil sensing, and climate control.
+                </p>
+              </div>
+              <a 
+                href="https://www.blyten.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
+              >
+                <span>Inquire Now</span> <span>→</span>
+              </a>
+            </div>
+
+            {/* Smart Hotel */}
+            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
+                  <Hotel className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-paper mb-4">Smart Hotel</h3>
+                <p className="text-xs text-paper/60 leading-relaxed mb-6">
+                  Guest experience automation: room controls, energy efficiency, and check-in integration.
+                </p>
+              </div>
+              <a 
+                href="https://www.blyten.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
+              >
+                <span>Inquire Now</span> <span>→</span>
+              </a>
+            </div>
+
+            {/* Smart Home */}
+            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
+                  <HomeIcon className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-paper mb-4">Smart Home</h3>
+                <p className="text-xs text-paper/60 leading-relaxed mb-6">
+                  Integrated residential automation: lighting, climate, security, and voice control.
+                </p>
+              </div>
+              <a 
+                href="https://www.blyten.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
+              >
+                <span>Inquire Now</span> <span>→</span>
+              </a>
+            </div>
+
+            {/* Smart Office */}
+            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
+                  <Building className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-paper mb-4">Smart Office</h3>
+                <p className="text-xs text-paper/60 leading-relaxed mb-6">
+                  Intelligent workspaces: occupancy tracking, meeting room automation, and energy zoning.
+                </p>
+              </div>
+              <a 
+                href="https://www.blyten.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
+              >
+                <span>Inquire Now</span> <span>→</span>
+              </a>
+            </div>
+
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <Sliders className="w-5 h-5 text-gold" />
+              <span className="text-xs text-paper/80 font-medium">
+                Looking for tailored IoT sensors, custom telemetry firmware, or hardware prototypes?
+              </span>
+            </div>
+            <Link 
+              to="/contact?pillar=Engineering" 
+              className="text-xs font-bold uppercase tracking-widest text-gold hover:text-white"
+            >
+              Request Custom IoT Consultation →
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. SUB-SECTION: ICT (INFORMATION & COMMUNICATIONS TECHNOLOGY) */}
       <section id="ict" className="py-24 px-6 max-w-7xl mx-auto">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/30 bg-gold/10 text-[10px] font-bold uppercase tracking-widest text-[#8a6828] mb-4">
               <Network className="w-3.5 h-3.5 text-gold" />
-              Section 02 • Enterprise Data & Networking
+              Section 03 • Enterprise Data & Networking
             </div>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#1f1712] leading-none">
               ICT Services <span className="text-gold">& Networks</span>
@@ -392,138 +518,6 @@ export default function Engineering() {
 
       </section>
 
-      {/* 5. SUB-SECTION: SMART IOT / ELECTRICAL / CONTROL */}
-      <section id="iot" className="py-24 px-6 bg-[#1f1712] text-paper border-t border-gold/20">
-        <div className="max-w-7xl mx-auto">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/30 bg-gold/10 text-[10px] font-bold uppercase tracking-widest text-gold mb-4">
-                <Cpu className="w-3.5 h-3.5 text-gold" />
-                Section 03 • Smart IoT & Automation
-              </div>
-              <div className="flex items-center gap-3">
-                <h2 className="text-3xl sm:text-6xl font-black uppercase tracking-tight text-paper leading-none">
-                  Smart IoT & Automation
-                </h2>
-              </div>
-              <p className="text-sm sm:text-base text-paper/70 max-w-2xl mt-4 leading-relaxed">
-                Inventé Network provides intelligent sensor telemetry, micro-climate controls, and automated facilities across three core suites:
-              </p>
-            </div>
-
-            <Link 
-              to="/contact?pillar=Engineering"
-              className="px-8 py-4 bg-gold text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black transition-all shadow-lg shadow-gold/20 self-start md:self-auto flex items-center gap-2"
-            >
-              Consult IoT Specialist <ExternalLink className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* 3 Blyten Suites */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            
-            {/* Smart Farming */}
-            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
-                  <Sprout className="w-7 h-7" />
-                </div>
-                <span className="text-[10px] uppercase font-black tracking-widest text-gold block mb-2">Suite 01</span>
-                <h3 className="text-2xl font-black uppercase tracking-tight text-paper mb-4">Smart Farming</h3>
-                <p className="text-xs text-paper/60 leading-relaxed mb-6">
-                  Precision agriculture systems: automated drip irrigation, soil moisture & EC sensing, greenhouse microclimate control, and solar telemetry stations.
-                </p>
-                <div className="space-y-2 mb-8">
-                  {['Soil NPK & Moisture Telemetry', 'Automated Irrigation Solenoids', 'Cloud Agrotech Dashboard'].map((f, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[11px] text-paper/80">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-gold" /> {f}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Link 
-                to="/smart-farming" 
-                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
-              >
-                <span>Smart Farming Details</span> <span>→</span>
-              </Link>
-            </div>
-
-            {/* Smart Home */}
-            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
-                  <HomeIcon className="w-7 h-7" />
-                </div>
-                <span className="text-[10px] uppercase font-black tracking-widest text-gold block mb-2">Suite 02</span>
-                <h3 className="text-2xl font-black uppercase tracking-tight text-paper mb-4">Smart Home</h3>
-                <p className="text-xs text-paper/60 leading-relaxed mb-6">
-                  Integrated residential automation: intelligent circadian lighting, smart door access, automated curtain controllers, and live household energy analytics.
-                </p>
-                <div className="space-y-2 mb-8">
-                  {['Circadian Light Scheduling', 'Keyless Biometric Access', 'Mobile & Voice Integration'].map((f, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[11px] text-paper/80">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-gold" /> {f}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Link 
-                to="/smart-home" 
-                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
-              >
-                <span>Smart Home Details</span> <span>→</span>
-              </Link>
-            </div>
-
-            {/* Smart Office */}
-            <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all group">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
-                  <Building className="w-7 h-7" />
-                </div>
-                <span className="text-[10px] uppercase font-black tracking-widest text-gold block mb-2">Suite 03</span>
-                <h3 className="text-2xl font-black uppercase tracking-tight text-paper mb-4">Smart Office</h3>
-                <p className="text-xs text-paper/60 leading-relaxed mb-6">
-                  Commercial building intelligence: meeting room occupancy automation, climate zoning, automated power down after hours, and asset monitoring.
-                </p>
-                <div className="space-y-2 mb-8">
-                  {['Occupancy-Based HVAC', 'Smart Boardroom Control', 'ESG Energy Optimization'].map((f, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[11px] text-paper/80">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-gold" /> {f}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Link 
-                to="/smart-office" 
-                className="text-xs uppercase font-bold tracking-widest text-gold hover:text-white transition-colors flex items-center justify-between pt-4 border-t border-white/10"
-              >
-                <span>Smart Office Details</span> <span>→</span>
-              </Link>
-            </div>
-
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <Sliders className="w-5 h-5 text-gold" />
-              <span className="text-xs text-paper/80 font-medium">
-                Looking for tailored IoT sensors, custom telemetry firmware, or hardware prototypes?
-              </span>
-            </div>
-            <Link 
-              to="/contact?pillar=Engineering" 
-              className="text-xs font-bold uppercase tracking-widest text-gold hover:text-white"
-            >
-              Request Custom IoT Consultation →
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
       {/* 6. SUB-SECTION: SERVICES / SOFTWARE & APP DEVELOPMENT */}
       <section id="software" className="py-24 px-6 bg-white border-y border-[#1f1712]/10">
         <div className="max-w-7xl mx-auto">
@@ -557,7 +551,7 @@ export default function Engineering() {
                 <div className="p-4 rounded-xl bg-[#faf7f2] border border-[#1f1712]/10 flex items-start gap-4">
                   <Compass className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="text-xs font-bold uppercase tracking-wider text-[#1f1712]">Blynd Platform Architecture</h5>
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-[#1f1712]">Software Platform Architecture</h5>
                     <p className="text-[11px] text-[#1f1712]/60">Algorithmic mystery itineration, automated booking logic, and seamless mobile tourism discovery.</p>
                   </div>
                 </div>
@@ -565,10 +559,10 @@ export default function Engineering() {
 
               <div className="flex flex-wrap gap-4">
                 <Link 
-                  to="/blynd"
+                  to="/contact?pillar=Engineering"
                   className="px-8 py-4 bg-[#1f1712] text-paper text-xs font-bold uppercase tracking-widest rounded-full hover:bg-gold hover:text-white transition-all shadow-md flex items-center gap-2"
                 >
-                  Discover Blynd Platform <ArrowRight className="w-4 h-4" />
+                  Consult Software Team <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link 
                   to="/contact?pillar=Engineering"
@@ -753,7 +747,7 @@ export default function Engineering() {
               Ready to Architect Your Next Infrastructure or IoT Solution?
             </h3>
             <p className="text-sm text-paper/70 leading-relaxed mb-8">
-              Whether you require M&E engineering, wireless network deployment, Blyten smart automation, or custom software development, our engineers are ready to assist.
+              Whether you require M&E engineering, wireless network deployment, smart automation, or custom software development, our engineers are ready to assist.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link 

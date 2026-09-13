@@ -43,7 +43,7 @@ export default function EngineeringProducts() {
           <ArrowLeft className="w-4 h-4" /> Back to Products
         </Link>
 
-        {/* Featured Hero: Blyten IoT */}
+        {/* Featured Hero: Engineering Solutions */}
         <section className="mb-32">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -61,20 +61,13 @@ export default function EngineeringProducts() {
                   <Cpu className="w-8 h-8 text-gold" />
                 </motion.div>
                 <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8">
-                  BLYTEN <span className="text-gold">IoT</span>.
+                  SMART <span className="text-gold">IoT</span>.
                 </h1>
                 <p className="text-xl text-paper/60 leading-relaxed mb-12 max-w-lg">
-                  As the authorized provider for Blyten Infrastructure, we deliver the future of smart automation. From facilities to farming, our IoT solutions bridge the gap between physical infrastructure and digital intelligence.
+                  We deliver the future of smart automation. From facilities to farming, our IoT solutions bridge the gap between physical infrastructure and digital intelligence.
                 </p>
-                <div className="flex flex-wrap gap-4 mb-12">
-                  {['Smart Nodes', 'Environmental Sensors', 'Industrial Controllers'].map(p => (
-                    <span key={p} className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-gold">
-                      {p}
-                    </span>
-                  ))}
-                </div>
                 <Link 
-                  to="/blyten" 
+                  to="/contact" 
                   className="inline-flex items-center gap-4 px-10 py-5 bg-gold text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black transition-all"
                 >
                   Configure Solution <ArrowRight className="w-4 h-4" />

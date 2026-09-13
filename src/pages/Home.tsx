@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import Logo from '../components/Logo';
 import PillarCard from '../components/PillarCard';
-import BlyndLogo from '../components/BlyndLogo';
 
 export default function Home() {
   const highlightCards = [
@@ -65,14 +64,22 @@ export default function Home() {
   const trustedClients = [
     { name: "Airport Authority", detail: "Sibu Airport FIDS & Systems" },
     { name: "Air Selangor", detail: "Statewide Wireless PTP Network" },
-    { name: "KLIA 2", detail: "Advanced Lighting Control System" },
     { name: "MRT Putrajaya", detail: "IVS2 & ECS3 Electrical Works" },
     { name: "Sunway Group", detail: "High-Density Managed Wi-Fi" },
     { name: "Dyson Manufacturing", detail: "Industrial Network & Security" },
     { name: "Swinburne University", detail: "Space Science & Aerospace Labs" },
     { name: "University Malaya", detail: "IoT & Surveillance Infrastructure" },
     { name: "UiTM", detail: "Future Skills & Tech Seminars" },
-    { name: "HRD Corp", detail: "Registered & Certified Trainer" }
+    { name: "HRD Corp", detail: "Registered & Certified Trainer" },
+    { name: "The Seven Stars Hotel", detail: "Smart Guest Room Solutions" },
+    { name: "Chinatown 1974", detail: "Lighting Control System" },
+    { name: "KLIA T1", detail: "Wifi Refresh Project" },
+    { name: "KLIA T2", detail: "Airport Infrastructure" },
+    { name: "PERMATA SAPURA", detail: "ACMV Solutions" },
+    { name: "The Ritz Clinic", detail: "Surveillance & PA System" },
+    { name: "Time @ UPM", detail: "Data Centre Deployment" },
+    { name: "Borneo Cultural Museum", detail: "Surveillance System" },
+    { name: "MEASAT", detail: "ConnectMe & MEASAT 3D" }
   ];
 
   return (
@@ -93,6 +100,13 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto w-full relative z-10 text-center">
           
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8">
+            <Calendar className="w-3.5 h-3.5 text-white" />
+            <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/90">
+              Celebrating 6 Years of Excellence
+            </span>
+          </div>
+
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -189,14 +203,14 @@ export default function Home() {
             pillarName="Engineering"
             title="Infrastructure & Systems"
             subtitle="M&E, ICT, Smart IoT & Software"
-            description="End-to-end technical execution: heavy electrical switchgears, enterprise wireless data networks, Blyten smart automation, and bespoke software development."
+            description="End-to-end technical execution: heavy electrical switchgears, enterprise wireless data networks, smart automation, and bespoke software development."
             badge="Enterprise Grade"
             badgeIcon={<ShieldCheck className="w-3.5 h-3.5 text-gold" />}
             highlights={[
               "M&E Services — Industrial power distribution & lighting control",
               "ICT Services — Long-range wireless PTP, switching & surveillance",
-              "Blyten Smart IoT — Smart farming, smart home & smart office",
-              "Blynd — Custom software & experiential mobile platforms",
+              "Smart IoT — Smart farming, smart home & smart office",
+              "Software & Apps — Custom platforms",
               "Engineering Project References — Rail transit, airports & utilities"
             ]}
             link="/engineering"
@@ -204,8 +218,8 @@ export default function Home() {
             subLinks={[
               { name: "M&E Services", path: "/engineering#me" },
               { name: "ICT Infrastructure", path: "/engineering#ict" },
-              { name: "Blyten IoT", path: "/engineering#blyten" },
-              { name: "Blynd Software", path: "/engineering#blynd" },
+              { name: "Smart IoT", path: "/engineering#iot" },
+              { name: "Software Development", path: "/engineering#software" },
               { name: "Project References", path: "/engineering#references" }
             ]}
           />

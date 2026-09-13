@@ -66,7 +66,7 @@ export default function Contact() {
           </h1>
 
           <p className="text-base sm:text-lg text-paper/75 max-w-2xl leading-relaxed">
-            Whether you are commissioning corporate Train-the-Trainer workshops, procuring STEM learning kits, planning M&E installations, or integrating Blyten Smart IoT systems, our engineering team is here to assist.
+            Whether you are commissioning corporate Train-the-Trainer workshops, procuring STEM learning kits, planning M&E installations, or integrating Smart IoT systems, our engineering team is here to assist.
           </p>
         </div>
       </section>
@@ -146,8 +146,8 @@ export default function Contact() {
                     </optgroup>
                     <optgroup label="Pillar 02 — Engineering">
                       <option value="Engineering: M&E or ICT Infrastructure">Mechanical & Electrical (M&E) / ICT Infrastructure</option>
-                      <option value="Engineering: Blyten Smart IoT">Smart IoT (Blyten — Farming / Home / Office)</option>
-                      <option value="Engineering: Software & App Development">Software & App Development (Blynd / Custom)</option>
+                      <option value="Engineering: Smart IoT">Smart IoT (Farming / Home / Office)</option>
+                      <option value="Engineering: Software & App Development">Software & App Development</option>
                     </optgroup>
                     <optgroup label="General">
                       <option value="General Inquiry">General Consultation & Partnership</option>
@@ -275,7 +275,7 @@ export default function Contact() {
                 <div className="p-3 rounded-xl bg-[#faf7f2] border border-[#1f1712]/5">
                   <ShieldCheck className="w-4 h-4 text-gold mb-1" />
                   <span className="font-bold block text-[#1f1712]">Engineering</span>
-                  <span className="text-[10px] text-[#1f1712]/60">M&E, ICT, Blyten & Blynd</span>
+                  <span className="text-[10px] text-[#1f1712]/60">M&E, ICT & Smart Systems</span>
                 </div>
               </div>
             </div>

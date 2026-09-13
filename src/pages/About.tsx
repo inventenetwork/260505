@@ -29,13 +29,13 @@ export default function About() {
     },
     {
       year: "2023",
-      title: "Blyten Smart IoT & Railway Packages",
-      desc: "Launched proprietary Blyten IoT agrotech solutions; executed electrical packages for the MRT Putrajaya transit line."
+      title: "Smart IoT & Railway Packages",
+      desc: "Launched proprietary Smart IoT agrotech solutions; executed electrical packages for the MRT Putrajaya transit line."
     },
     {
       year: "2024 – 2026",
       title: "6 Years & Two Pillars Evolution",
-      desc: "Solidified organization around two clear divisions: Education (HRD Corp TTT & STE(A)M) and Engineering (M&E, ICT, Blyten, Blynd)."
+      desc: "Solidified organization around two clear divisions: Education (HRD Corp TTT & STE(A)M) and Engineering (M&E, ICT, Smart IoT, Software)."
     }
   ];
 
@@ -141,7 +141,7 @@ export default function About() {
               </div>
               <div className="flex items-start gap-2.5 text-xs text-[#1f1712]/80">
                 <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                <span><strong>Blyten & Blynd</strong>: Proprietary Smart IoT telemetry (farming, home, office) and digital software development.</span>
+                <span><strong>Smart IoT & Software</strong>: Proprietary Smart IoT telemetry (farming, home, office) and digital software development.</span>
               </div>
             </div>
             <Link to="/engineering" className="text-xs uppercase tracking-widest font-bold text-gold hover:text-[#1f1712] flex items-center gap-2">

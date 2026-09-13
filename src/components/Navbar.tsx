@@ -32,9 +32,9 @@ export default function Navbar() {
       path: '/engineering',
       dropdown: [
         { name: 'M&E (Mechanical & Electrical)', path: '/engineering#me' },
+        { name: 'Smart IoT', path: '/engineering#smart-iot' },
         { name: 'ICT (Info & Comms Tech)', path: '/engineering#ict' },
-        { name: 'Smart IoT', path: '/engineering#blyten' },
-        { name: 'Software & App Dev', path: '/engineering#blynd' },
+        { name: 'Software & App Dev', path: '/engineering#software' },
         { name: 'Engineering Project References', path: '/engineering#references' },
       ]
     },

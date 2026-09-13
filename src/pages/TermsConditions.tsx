@@ -67,8 +67,8 @@ export default function TermsConditions() {
               <p>Invente Network operates across multiple business areas, including:</p>
               <ul className="list-disc list-inside space-y-2 mt-4">
                 <li><span className="text-[#b38b3f] font-bold">Education</span> – training programs, workshops, and courses</li>
-                <li><span className="text-[#b38b3f] font-bold">Blyten</span> – smart IoT, engineering, and technology solutions</li>
-                <li><span className="text-[#b38b3f] font-bold">Blynd</span> – curated blindbox tourism experiences</li>
+                <li><span className="text-[#b38b3f] font-bold">Smart IoT</span> – engineering, and technology solutions</li>
+                <li><span className="text-[#b38b3f] font-bold">Tourism Experiences</span> – curated travel experiences</li>
                 <li><span className="text-[#b38b3f] font-bold">Products & Services</span> – third-party products, engineering solutions, and professional services</li>
               </ul>
               <p className="mt-4 italic text-sm">All services are subject to availability and may be modified or discontinued at any time without prior notice.</p>
@@ -105,7 +105,7 @@ export default function TermsConditions() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-[#f5f2ed] uppercase tracking-tight mb-6">6. Blyten (Engineering & IoT Solutions)</h2>
+              <h2 className="text-2xl font-bold text-[#f5f2ed] uppercase tracking-tight mb-6">6. Smart IoT & Engineering Solutions</h2>
               <ul className="list-disc list-inside space-y-2 mt-4">
                 <li>All engineering solutions are subject to project scope, technical feasibility, and client requirements</li>
                 <li>Quotations provided are estimates and may vary based on project changes</li>
@@ -123,8 +123,8 @@ export default function TermsConditions() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-[#f5f2ed] uppercase tracking-tight mb-6">8. Blynd (Tourism Experiences)</h2>
-              <p>For Blynd travel experiences:</p>
+              <h2 className="text-2xl font-bold text-[#f5f2ed] uppercase tracking-tight mb-6">8. Tourism Experiences</h2>
+              <p>For travel experiences:</p>
               <ul className="list-disc list-inside space-y-2 mt-4">
                 <li>Bookings are subject to availability and confirmation</li>
                 <li>Itineraries may involve surprise elements and are not fully disclosed in advance</li>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Network, Database, Cpu, Activity, ArrowRight, ShieldCheck, Globe, BarChart3 } from 'lucide-react';
-import BlytenAsterisk from '../components/BlytenAsterisk';
 
 export default function SmartIoT() {
   const features = [
@@ -48,7 +47,6 @@ export default function SmartIoT() {
             className="flex flex-col items-center"
           >
             <div className="mb-8 flex flex-col items-center relative">
-              <BlytenAsterisk />
               <h1 className="font-sans text-5xl md:text-8xl font-black text-[#b38b3f] tracking-tighter uppercase leading-none">
                 SMART <span className="text-[#f5f2ed]">IoT</span>
               </h1>

@@ -24,7 +24,6 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { cn } from '../lib/utils';
-import BlyndLogo from '../components/BlyndLogo';
 import { EngineeringPreview } from '../components/AnimatedPreviews';
 
 type FilterType = 'All' | 'Core Pillars' | 'Products' | 'Services';
@@ -44,26 +43,6 @@ interface Service {
 }
 
 const corePillars = [
-  {
-    id: 'blyten',
-    title: 'Blyten',
-    tagline: 'Smart. Simplified.',
-    description: 'Smart IoT solutions, automation systems, and engineering technologies for modern infrastructure.',
-    cta: 'Explore Blyten',
-    link: '/blyten',
-    icon: <Cpu className="w-12 h-12" />,
-    image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1200'
-  },
-  {
-    id: 'blynd',
-    title: 'Blynd',
-    tagline: 'Travel.Unscripted',
-    description: 'Curated blindbox travel experiences across Malaysia for unique and premium journeys.',
-    cta: 'Discover Blynd',
-    link: '/blynd',
-    icon: <BlyndLogo size="sm" showTagline={false} />,
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1200'
-  },
   {
     id: 'education',
     title: 'STEM Education',
@@ -275,100 +254,6 @@ export default function Products() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Section 1: Blyten IoT (FEATURED RESELLER) */}
-            {(filter === 'All' || filter === 'Products') && (
-              <div id="blyten" className="mb-32">
-                <div className="flex items-center gap-4 mb-12">
-                  <div className="h-px flex-1 bg-white/10" />
-                  <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-gold">01. Blyten Smart IoT Solutions</h2>
-                  <div className="h-px flex-1 bg-white/10" />
-                </div>
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gold/10 to-transparent border border-gold/20 rounded-[3rem] p-8 md:p-16 relative overflow-hidden"
-                >
-                  <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
-                    <div>
-                      <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mb-8">
-                        <Cpu className="w-8 h-8 text-gold" />
-                      </div>
-                      <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-paper">Advanced <span className="text-gold">Automation</span> Units</h3>
-                      <p className="text-lg text-paper/60 mb-8 leading-relaxed">Inventé Network is the official partner for Blyten Infrastructure. We provide the hardware and integration services for smart farming, home automation, and industrial IoT.</p>
-                      <Link to="/blyten" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold hover:text-white transition-colors">
-                        View Blyten Specs <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                    <div className="bg-black/40 rounded-[2rem] p-8 border border-white/5">
-                      <EngineeringPreview />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            )}
-
-            {/* Section 2: Professional Services & Engineering */}
-            {(filter === 'All' || filter === 'Services') && (
-              <div id="professional-services" className="mb-32">
-                <div className="flex items-center justify-between mb-12">
-                  <div className="h-px flex-1 bg-white/10" />
-                  <h2 className="px-4 text-[10px] uppercase tracking-[0.5em] font-bold text-paper/40">02. Professional Services</h2>
-                  <div className="h-px flex-1 bg-white/10" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {services.map((service) => (
-                    <motion.div
-                      key={service.title}
-                      whileHover={{ scale: 1.02 }}
-                      className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:border-gold/30 transition-all duration-500"
-                    >
-                      <div className="text-gold mb-6">{service.icon}</div>
-                      <h4 className="text-xl font-black uppercase tracking-tight mb-4">{service.title}</h4>
-                      <p className="text-xs text-paper/50 mb-6">{service.items.join(' • ')}</p>
-                      <Link to="/contact" className="text-[10px] font-bold uppercase tracking-widest text-gold hover:text-white">Get Started →</Link>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Section 3: Education (PRIORITY 3) */}
-            {(filter === 'All' || filter === 'Core Pillars') && (
-              <div id="education-pillar" className="mb-32">
-                <div className="flex items-center gap-4 mb-12">
-                  <div className="h-px flex-1 bg-white/10" />
-                  <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-[#b38b3f]">03. Education & STEM</h2>
-                  <div className="h-px flex-1 bg-white/10" />
-                </div>
-                <Link to="/education" className="group">
-                  <motion.div 
-                    whileHover={{ y: -10 }}
-                    className="relative h-[600px] rounded-[2.5rem] overflow-hidden border border-white/10"
-                  >
-                    <img 
-                      src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200" 
-                      alt="STEM Education"
-                      className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2a1d15] via-[#2a1d15]/40 to-transparent" />
-                    <div className="absolute inset-0 p-10 flex flex-col justify-end max-w-2xl">
-                      <div className="text-[#b38b3f] mb-6"><GraduationCap className="w-12 h-12" /></div>
-                      <h3 className="text-5xl font-black uppercase tracking-tighter mb-4">Educational Transformation</h3>
-                      <p className="text-[#b38b3f] text-xs font-bold uppercase tracking-widest mb-6">ideas.engineered</p>
-                      <p className="text-lg text-[#f5f2ed]/60 leading-relaxed mb-10">
-                        Future-focused learning programs and innovation workshops designed to bridge the gap between classroom theory and industry excellence.
-                      </p>
-                      <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-white group-hover:text-[#b38b3f] transition-colors">
-                        Explore STEM Education <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </motion.div>
-                </Link>
-              </div>
-            )}
-
             {/* Section 3: Proprietary Brands (PRIORITY 3) */}
             {(filter === 'All' || filter === 'Core Pillars') && (
               <div id="brands-pillar" className="mb-32">
@@ -378,7 +263,7 @@ export default function Products() {
                   <div className="h-px flex-1 bg-white/10" />
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {corePillars.filter(p => p.id !== 'education').map((pillar) => (
+                  {corePillars.map((pillar) => (
                     <Link to={pillar.link} key={pillar.id} className="group">
                       <motion.div 
                         whileHover={{ y: -10 }}

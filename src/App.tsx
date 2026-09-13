@@ -7,6 +7,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -77,6 +85,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-black text-[#f5f2ed] font-sans selection:bg-[#b38b3f]/30">
         <Navbar />
         <AnimatedRoutes />
