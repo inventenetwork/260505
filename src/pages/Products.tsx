@@ -205,21 +205,48 @@ export default function Products() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/10 backdrop-blur-md mb-6">
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-gold">
+              Engineering Pillar
+            </span>
+          </div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8"
           >
-            Products & <span className="text-[#b38b3f]">Services</span>.
+            Engineering <span className="text-[#b38b3f]">Solutions</span>.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-[#f5f2ed]/60 max-w-2xl leading-relaxed"
+            className="text-lg text-[#f5f2ed]/60 max-w-2xl leading-relaxed mb-8"
           >
-            We provide end-to-end engineering and digital solutions—from concept design to execution. Explore our diverse ecosystem of proprietary brands and professional services.
+            Our core Engineering pillar consolidates precision hardware, enterprise IT & network infrastructure, and specialized professional services—delivering end-to-end execution from concept design to turnkey deployment.
           </motion.p>
+          
+          {/* Direct Pillar Sub-routes */}
+          <div className="flex flex-wrap gap-3">
+            <Link 
+              to="/engineering-products"
+              className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-gold text-[10px] uppercase tracking-widest font-bold text-paper hover:text-gold transition-colors"
+            >
+              Engineering Products →
+            </Link>
+            <Link 
+              to="/network-it-products"
+              className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-gold text-[10px] uppercase tracking-widest font-bold text-paper hover:text-gold transition-colors"
+            >
+              IT & Network Products →
+            </Link>
+            <Link 
+              to="/professional-services"
+              className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-gold text-[10px] uppercase tracking-widest font-bold text-paper hover:text-gold transition-colors"
+            >
+              Professional Services →
+            </Link>
+          </div>
         </div>
 
         {/* Filter System */}

@@ -14,12 +14,12 @@ import WhatsAppBubble from './components/WhatsAppBubble';
 
 // Pages
 import Home from './pages/Home';
+import Engineering from './pages/Engineering';
 import Products from './pages/Products';
-import Blyten from './pages/Blyten';
-import Blynd from './pages/Blynd';
 import Education from './pages/Education';
 import StemEducation from './pages/StemEducation';
 import EducateTheEducator from './pages/EducateTheEducator';
+import TrainTheTrainer from './pages/TrainTheTrainer';
 import TechnicalCourses from './pages/TechnicalCourses';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -49,11 +49,11 @@ function AnimatedRoutes() {
       >
         <Routes location={location}>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/blyten" element={<Blyten />} />
-          <Route path="/blynd" element={<Blynd />} />
+          <Route path="/engineering" element={<Engineering />} />
+          <Route path="/products" element={<Engineering />} />
           <Route path="/education" element={<Education />} />
           <Route path="/stem-education" element={<StemEducation />} />
+          <Route path="/train-the-trainer" element={<TrainTheTrainer />} />
           <Route path="/educate-the-educator" element={<EducateTheEducator />} />
           <Route path="/technical-courses" element={<TechnicalCourses />} />
           <Route path="/about" element={<About />} />

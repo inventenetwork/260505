@@ -1,5 +1,8 @@
 {
-  "name": "Remix: Remix: Inventé Network Ecosystem",
-  "description": "A premium innovation ecosystem powered by engineering excellence, transformative education, and proprietary smart solutions like Blyten and Blynd.",
-  "requestFramePermissions": []
+  "name": "Inventé Network",
+  "description": "Malaysia-based innovation and engineering group structured around two business pillars: Education and Engineering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

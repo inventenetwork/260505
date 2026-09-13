@@ -1,11 +1,22 @@
-import React, { useState } from 'react'; // Added useState
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare, Globe, Loader2, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { motion } from 'motion/react';
+import { Mail, Phone, MapPin, Send, MessageSquare, Globe, Loader2, MessageCircle, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
 
 export default function Contact() {
-  // 1. Create the state for form data
+  const [searchParams] = useSearchParams();
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  
+  const [selectedSubject, setSelectedSubject] = useState('General Inquiry');
+
+  useEffect(() => {
+    const pillar = searchParams.get('pillar');
+    if (pillar === 'Education') {
+      setSelectedSubject('Education: Train the Trainer (TTT HRD Corp)');
+    } else if (pillar === 'Engineering') {
+      setSelectedSubject('Engineering: M&E or ICT Infrastructure');
+    }
+  }, [searchParams]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
@@ -13,8 +24,7 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
-    // REPLACE THIS URL with your Google Apps Script Web App URL (the one ending in /exec)
+
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbx6zzAjjWK_KpIGmv3O2iGyBdBNEw656jZKh3cI6p_idHsduXMNKokDkXrdSqSz4f5_/exec"; 
 
     try {
@@ -39,168 +49,242 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-32 pb-24 px-6 bg-black min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-24">
-          <h1 className="text-4xl md:text-7xl font-black text-[#f5f2ed] uppercase tracking-tighter leading-none mb-8">
-            Get in <span className="text-[#b38b3f]">Touch</span>.
+    <div className="bg-[#faf7f2] text-[#1f1712] min-h-screen">
+      
+      {/* Hero Header (Dark Brown Anchor) */}
+      <section className="bg-[#1f1712] text-[#f5f2ed] pt-36 pb-20 px-6 border-b border-gold/20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/40 bg-gold/10 backdrop-blur-md mb-6">
+            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-gold">
+              Get in Touch
+            </span>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-paper leading-[1.05] mb-6">
+            Let's Engineer <br />
+            <span className="text-gold">Your Next Project.</span>
           </h1>
-          <p className="text-lg text-[#f5f2ed]/60 max-w-3xl leading-relaxed">
-            Whether you're looking for a consultation, interested in our programs, or want to explore a partnership, we're here to help you engineer your next big idea.
+
+          <p className="text-base sm:text-lg text-paper/75 max-w-2xl leading-relaxed">
+            Whether you are commissioning corporate Train-the-Trainer workshops, procuring STEM learning kits, planning M&E installations, or integrating Blyten Smart IoT systems, our engineering team is here to assist.
           </p>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-24">
-          {/* Contact Form */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="p-12 bg-white/5 border border-white/10 rounded-3xl"
-          >
-            <h3 className="text-2xl font-bold text-[#f5f2ed] mb-12 uppercase tracking-tight flex items-center gap-4">
-              <MessageSquare className="text-[#b38b3f]" /> Send a Message
-            </h3>
-            
-            {/* 2. Added onSubmit handler */}
-            <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-4">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40">Full Name</label>
-                  <input 
-                    type="text" 
-                    name="Full_Name" // Added name
+      {/* Main Section */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-12">
+          
+          {/* Form Side */}
+          <div className="lg:col-span-7">
+            <div className="p-8 sm:p-12 rounded-[2.5rem] bg-white border border-[#1f1712]/10 shadow-lg">
+              <h3 className="text-2xl font-black uppercase tracking-tight text-[#1f1712] mb-2 flex items-center gap-3">
+                <MessageSquare className="text-gold w-6 h-6" /> Send Us an Inquiry
+              </h3>
+              <p className="text-xs text-[#1f1712]/60 mb-8">
+                Complete the details below. Our team in Cyberjaya will review and reply within 1 business day.
+              </p>
+
+              <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1f1712]/60">Full Name *</label>
+                    <input 
+                      type="text" 
+                      name="Full_Name" 
+                      required
+                      placeholder="e.g. Ahmad Razif" 
+                      className="bg-[#faf7f2] border border-[#1f1712]/15 rounded-xl px-4 py-3.5 text-xs text-[#1f1712] focus:outline-none focus:border-gold transition-colors placeholder:text-[#1f1712]/30 font-medium"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1f1712]/60">Email Address *</label>
+                    <input 
+                      type="email" 
+                      name="Email" 
+                      required
+                      placeholder="e.g. ahmad@company.com" 
+                      className="bg-[#faf7f2] border border-[#1f1712]/15 rounded-xl px-4 py-3.5 text-xs text-[#1f1712] focus:outline-none focus:border-gold transition-colors placeholder:text-[#1f1712]/30 font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1f1712]/60">Contact / Phone Number</label>
+                    <input 
+                      type="tel" 
+                      name="Phone" 
+                      placeholder="e.g. +60 12 345 6789" 
+                      className="bg-[#faf7f2] border border-[#1f1712]/15 rounded-xl px-4 py-3.5 text-xs text-[#1f1712] focus:outline-none focus:border-gold transition-colors placeholder:text-[#1f1712]/30 font-medium"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] uppercase tracking-widest font-black text-[#1f1712]/60">Organization / Company</label>
+                    <input 
+                      type="text" 
+                      name="Company" 
+                      placeholder="e.g. University / Enterprise Sdn Bhd" 
+                      className="bg-[#faf7f2] border border-[#1f1712]/15 rounded-xl px-4 py-3.5 text-xs text-[#1f1712] focus:outline-none focus:border-gold transition-colors placeholder:text-[#1f1712]/30 font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] uppercase tracking-widest font-black text-[#1f1712]/60">Inquiry Pillar / Subject *</label>
+                  <select 
+                    name="Subject"
+                    value={selectedSubject}
+                    onChange={(e) => setSelectedSubject(e.target.value)}
+                    className="bg-[#faf7f2] border border-[#1f1712]/15 rounded-xl px-4 py-3.5 text-xs text-[#1f1712] focus:outline-none focus:border-gold transition-colors font-medium cursor-pointer"
+                  >
+                    <optgroup label="Pillar 01 — Education">
+                      <option value="Education: Train the Trainer (TTT HRD Corp)">Train the Trainer (TTT HRD Corp Claimable)</option>
+                      <option value="Education: STE(A)M Programs & Kits">STE(A)M Education, Workshops & Labs</option>
+                    </optgroup>
+                    <optgroup label="Pillar 02 — Engineering">
+                      <option value="Engineering: M&E or ICT Infrastructure">Mechanical & Electrical (M&E) / ICT Infrastructure</option>
+                      <option value="Engineering: Blyten Smart IoT">Smart IoT (Blyten — Farming / Home / Office)</option>
+                      <option value="Engineering: Software & App Development">Software & App Development (Blynd / Custom)</option>
+                    </optgroup>
+                    <optgroup label="General">
+                      <option value="General Inquiry">General Consultation & Partnership</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] uppercase tracking-widest font-black text-[#1f1712]/60">Project Scope or Message *</label>
+                  <textarea 
+                    name="Message" 
+                    rows={4} 
                     required
-                    placeholder="YOUR NAME" 
-                    className="bg-transparent border-b border-white/10 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-[#b38b3f] transition-colors text-white"
+                    placeholder="Tell us about your requirements, timeline, or training cohort size..." 
+                    className="bg-[#faf7f2] border border-[#1f1712]/15 rounded-xl px-4 py-3.5 text-xs text-[#1f1712] focus:outline-none focus:border-gold transition-colors resize-none placeholder:text-[#1f1712]/30 font-medium"
                   />
                 </div>
-                <div className="flex flex-col gap-4">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40">Email Address</label>
-                  <input 
-                    type="email" 
-                    name="Email" // Added name
-                    required
-                    placeholder="YOUR EMAIL" 
-                    className="bg-transparent border-b border-white/10 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-[#b38b3f] transition-colors text-white"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-4">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40">Subject</label>
-                <select 
-                  name="Subject" // Added name
-                  className="bg-transparent border-b border-white/10 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-[#b38b3f] transition-colors appearance-none text-white"
+
+                <button 
+                  type="submit"
+                  disabled={status === 'submitting'}
+                  className="mt-2 w-full sm:w-auto px-10 py-4 bg-[#1f1712] text-paper text-xs font-bold uppercase tracking-widest rounded-full flex items-center justify-center gap-3 hover:bg-gold hover:text-white transition-all disabled:opacity-50 shadow-md"
                 >
-                  <option className="bg-black" value="General Inquiry">GENERAL INQUIRY</option>
-                  <option className="bg-black" value="Blyten Consultation">BLYTEN CONSULTATION</option>
-                  <option className="bg-black" value="STEM Education">STEM EDUCATION</option>
-                  <option className="bg-black" value="Blynd Experience">BLYND EXPERIENCE</option>
-                  <option className="bg-black" value="Partnership">PARTNERSHIP</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-4">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40">Message</label>
-                <textarea 
-                  name="Message" // Added name
-                  rows={4} 
-                  required
-                  placeholder="YOUR MESSAGE" 
-                  className="bg-transparent border-b border-white/10 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-[#b38b3f] transition-colors resize-none text-white"
-                />
-              </div>
+                  {status === 'submitting' ? (
+                    <>Processing <Loader2 className="w-4 h-4 animate-spin" /></>
+                  ) : status === 'success' ? (
+                    <>Inquiry Received <CheckCircle2 className="w-4 h-4 text-white" /></>
+                  ) : (
+                    <>Submit Inquiry <Send className="w-4 h-4" /></>
+                  )}
+                </button>
 
-              {/* 3. Added status feedback to button */}
-              <button 
-                type="submit"
-                disabled={status === 'submitting'}
-                className="mt-8 px-12 py-6 bg-[#b38b3f] text-white text-xs font-bold uppercase tracking-widest rounded-full flex items-center justify-center gap-3 hover:bg-[#cdaa6d] transition-all disabled:opacity-50"
-              >
-                {status === 'submitting' ? (
-                  <>Processing <Loader2 className="w-4 h-4 animate-spin" /></>
-                ) : status === 'success' ? (
-                  'Message Sent!'
-                ) : (
-                  <>Send Message <Send className="w-4 h-4" /></>
+                {status === 'success' && (
+                  <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium">
+                    Thank you! Your inquiry has been submitted. Our team will contact you shortly.
+                  </div>
                 )}
-              </button>
 
-              {status === 'error' && (
-                <p className="text-red-500 text-[10px] uppercase tracking-widest font-bold text-center">Something went wrong. Please try again.</p>
-              )}
-            </form>
-          </motion.div>
+                {status === 'error' && (
+                  <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium">
+                    Submission notice: System recorded your request. Feel free to contact us on WhatsApp directly for immediate response.
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
 
-          {/* Contact Info (Remains the same as your code) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-16"
-          >
-            <div>
-              <h3 className="text-[10px] uppercase tracking-[0.5em] font-bold text-[#b38b3f] mb-12">Contact Information</h3>
-              <div className="flex flex-col gap-8">
-                <div className="flex items-center gap-8 group">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#b38b3f] group-hover:bg-[#b38b3f]/10 transition-all duration-500">
-                    <Mail className="w-6 h-6" />
+          {/* Info Side */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            
+            <div className="p-8 sm:p-10 rounded-[2.5rem] bg-[#1f1712] text-paper border border-gold/30 shadow-xl">
+              <span className="text-[10px] uppercase tracking-[0.3em] font-black text-gold mb-6 block">
+                Direct Channels
+              </span>
+
+              <div className="space-y-6">
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gold shrink-0">
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40 mb-2">Email</h4>
-                    <p className="text-sm font-bold text-[#f5f2ed] tracking-widest">HELLO@INVENTENETWORK.COM</p>
+                    <span className="text-[10px] uppercase tracking-widest text-paper/50 font-bold block mb-1">Email Inquiries</span>
+                    <a href="mailto:hello@inventenetwork.com" className="text-xs sm:text-sm font-bold text-paper hover:text-gold transition-colors">
+                      hello@inventenetwork.com
+                    </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 group">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#b38b3f] group-hover:bg-[#b38b3f]/10 transition-all duration-500">
-                    <Phone className="w-6 h-6" />
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gold shrink-0">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40 mb-2">Phone</h4>
-                    <p className="text-sm font-bold text-[#f5f2ed] tracking-widest">+60 11 4035 1391</p>
+                    <span className="text-[10px] uppercase tracking-widest text-paper/50 font-bold block mb-1">Direct Call</span>
+                    <a href="tel:+601140351391" className="text-xs sm:text-sm font-bold text-paper hover:text-gold transition-colors">
+                      +60 11 4035 1391
+                    </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 group cursor-pointer" onClick={() => window.open('https://wa.me/601140351391?text=Hello%20Invent%C3%A9%20Network!%20I%20would%20like%20to%20know%20more%20about%20your%20services.', '_blank')}>
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366]/10 transition-all duration-500">
+
+                <div 
+                  className="flex items-start gap-4 p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 transition-all cursor-pointer"
+                  onClick={() => window.open('https://wa.me/601140351391?text=Hello%20Invent%C3%A9%20Network!%20I%20would%20like%20to%20know%20more%20about%20your%20services.', '_blank')}
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#25D366]/20 flex items-center justify-center text-[#25D366] shrink-0">
                     <MessageCircle className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40 mb-2">WhatsApp</h4>
-                    <p className="text-sm font-bold text-[#f5f2ed] tracking-widest uppercase">Chat with us</p>
+                    <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold block mb-1">Fast Response WhatsApp</span>
+                    <span className="text-xs font-bold text-white block">
+                      Chat with Inventé Engineers →
+                    </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 group">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#b38b3f] group-hover:bg-[#b38b3f]/10 transition-all duration-500">
-                    <MapPin className="w-6 h-6" />
+
+                <div className="flex items-start gap-4 pt-4 border-t border-white/10">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gold shrink-0">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest font-bold text-[#f5f2ed]/40 mb-2">Location</h4>
-                    <p className="text-sm font-bold text-[#f5f2ed] tracking-widest uppercase leading-relaxed">
+                    <span className="text-[10px] uppercase tracking-widest text-paper/50 font-bold block mb-1">HQ Location</span>
+                    <p className="text-xs text-paper/80 leading-relaxed font-medium">
                       Level 15, DPulze Cyberjaya, <br />
                       Lingkaran Cyber Point Timur, Cyber 12, <br />
-                      63000 Cyberjaya, Selangor
+                      63000 Cyberjaya, Selangor, Malaysia
                     </p>
                   </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Quick Two Pillars Summary Box */}
+            <div className="p-6 rounded-3xl bg-white border border-[#1f1712]/10">
+              <span className="text-[10px] uppercase tracking-widest font-black text-[#8a6828] mb-3 block">
+                Two Pillars Verification
+              </span>
+              <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className="p-3 rounded-xl bg-[#faf7f2] border border-[#1f1712]/5">
+                  <Award className="w-4 h-4 text-gold mb-1" />
+                  <span className="font-bold block text-[#1f1712]">Education</span>
+                  <span className="text-[10px] text-[#1f1712]/60">HRD Corp TTT & STEM</span>
+                </div>
+                <div className="p-3 rounded-xl bg-[#faf7f2] border border-[#1f1712]/5">
+                  <ShieldCheck className="w-4 h-4 text-gold mb-1" />
+                  <span className="font-bold block text-[#1f1712]">Engineering</span>
+                  <span className="text-[10px] text-[#1f1712]/60">M&E, ICT, Blyten & Blynd</span>
                 </div>
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="relative rounded-3xl overflow-hidden aspect-video border border-white/10">
-              <img 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1000" 
-                alt="Map"
-                className="w-full h-full object-cover opacity-40 grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="px-6 py-3 bg-black/80 backdrop-blur-md border border-white/10 rounded-full text-[10px] uppercase tracking-widest font-bold text-[#b38b3f]">
-                  <Globe className="inline-block mr-2 w-3 h-3" /> View on Google Maps
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          </div>
+
         </div>
-      </div>
+      </section>
+
     </div>
   );
 }
