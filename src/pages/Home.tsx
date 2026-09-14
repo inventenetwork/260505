@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import Logo from '../components/Logo';
 import PillarCard from '../components/PillarCard';
+import issImage from '../assets/images/iss_hero_graphic_1789264346383.jpg';
 
 export default function Home() {
   const highlightCards = [
@@ -91,7 +92,7 @@ export default function Home() {
         {/* ISS Hero Graphic - positioned more subtly */}
         <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
           <img 
-            src="/src/assets/images/iss_hero_graphic_1789264346383.jpg" 
+            src={issImage} 
             alt="International Space Station" 
             className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
